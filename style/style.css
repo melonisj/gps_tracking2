@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* CSS Document */
+@font-face {
+	font-family: helvetica;
+	src: url('font/HelveticaNeue-Thin.otf');
+}
+body
+{
+	background-color:#202020;
+	color:#a7a1a1;
+	font-family:helvetica, serif;
+	margin: 0;
+}
+
+h1, h2
+{
+	color:#CCC;
+	font-weight:100;
+	margin-left: 3%;
+}
+
+h3
+{
+	color:#CCC;
+	font-weight:100;
+	margin-left: 3%;
+	margin-top: 0;
+}
+
+#top_data
+{
+	width: 100%;
+	height: 350px;
+	margin: auto;
+}
+
+#map
+{
+	left:1%;
+	width: 600px;
+	height: 350px;
+	float:left;
+}
+
+#checklist
+{
+	margin-left: 638px;
+	position: absolute;
+	width:300px;
+	height:350px;
+	border-left: solid;
+	border-width: 1px;
+	border-color: rgb(210,10,33);
+	padding:10px;
+
+}
+
+#status_diagram
+{
+	width:300px;
+	height:350px;
+	margin-left: 977px;
+	border-left: solid;
+	border-width: 1px;
+	border-color: rgb(210,10,33);
+	position:relative;
+	padding:10px;
+}
+
+#status_words
+{
+	width: 300px;
+	height: 370px;
+	float: left;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1000;
+}
+
+#status_table
+{
+	margin-left:65px;
+	margin-top:250px;
+}
+
+
+h1:onClick
+{
+	color: rgb(210, 131, 94);
+}
+
+table.dataTable
+{
+	bottom: 8%;
+	border-collapse: collapse;
+	border-style: hidden;
+	left: 6%;
+	position: absolute;
+	width: 88%;
+}
+
+table.dataTable td
+{
+	border-color: rgb(210,10,33);
+	border-style: solid;
+	border-width: 1px;
+	height: 45px;
+	text-align: center;
+	margin-left: 1%;
+	padding: 2px;
+	width: 8%;
+}
+
+table.dataTable td.title
+{
+	text-align: right;
+	font-size: 14pt;
+	color:#FFF;
+	font-weight: 300;
+}
