@@ -4,6 +4,12 @@
 	font-family: helvetica;
 	src: url('font/HelveticaNeue-Thin.otf');
 }
+
+*{
+	margin:0;
+	padding:0;
+	cursor:none;
+}
 body
 {
 	background-color:#202020;
@@ -12,6 +18,8 @@ body
 	margin: 0;
 	height:480px;
 	width:800px;
+	overflow:hidden;
+	margin-top:16px;
 }
 
 h1, h2
@@ -19,6 +27,7 @@ h1, h2
 	color:#CCC;
 	font-weight:100;
 	margin-left: 3%;
+	padding-top:5px;
 }
 
 h3
