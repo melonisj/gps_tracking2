@@ -21,6 +21,7 @@ function updateGPGGA() {
   if(setGroundFlag){
 	document.getElementById("ground_altitude_data_cell").innerHTML = (dataIn.altitude).toFixed(2)  + " " + dataIn.altUnit;
 	groundAlt = dataIn.altitude;
+	maxAltitude = maxAltitude - groundAlt;
 	document.getElementById("rocket_max_altitude_data_cell").innerHTML = (maxAltitude-groundAlt).toFixed(2) + " " + dataIn.altUnit;
 
 	setGroundFlag = false;
