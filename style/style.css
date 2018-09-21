@@ -20,6 +20,12 @@ body
 	width:800px;
 	overflow:hidden;
 	margin-top:16px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: 
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 h1, h2
