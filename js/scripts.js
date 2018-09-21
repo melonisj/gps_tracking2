@@ -8,8 +8,8 @@ var setGroundFlag = false;
 
 
 function updateGPGGA() {
-  $('#title_div1').css({backgroundColor:'#116321'})
-  $('#title_div1').animate({backgroundColor:'#5a0707'}, 300);
+  //$('#title_div1').css({backgroundColor:'#116321'})
+  //$('#title_div1').animate({backgroundColor:'#5a0707'}, 300);
   document.getElementById("rocket_lat_data_cell").innerHTML = dataIn.lat.toFixed(6) + dataIn.latInd
   document.getElementById("gps_quality_data_cell").innerHTML = dataIn.gpsQuality;
   document.getElementById("rocket_long_data_cell").innerHTML = dataIn.long.toFixed(6) + dataIn.longInd;
@@ -20,9 +20,9 @@ function updateGPGGA() {
   }
   if(setGroundFlag){
 	document.getElementById("ground_altitude_data_cell").innerHTML = (dataIn.altitude).toFixed(2)  + " " + dataIn.altUnit;
+	groundAlt = dataIn.altitude;
 	document.getElementById("rocket_max_altitude_data_cell").innerHTML = (maxAltitude-groundAlt).toFixed(2) + " " + dataIn.altUnit;
 
-	groundAlt = dataIn.altitude;
 	setGroundFlag = false;
   }
 }
@@ -86,7 +86,7 @@ function socSetup() {
     console.log('websocket opened');
   };
   soc.onmessage = function(p1) {
-    console.log('data received over websocket');
+    //console.log('data received over websocket');
     //console.log(p1.data)
     updatePage(p1.data);
   };
