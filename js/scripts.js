@@ -40,15 +40,33 @@ function setAltitude() {
 }
 
 function makeFullScreen(){
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) { /* Firefox */
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE/Edge */
-    elem.msRequestFullscreen();
-  }
+	if(document.getElementById("full_screen_toggle").innerHTML=="Make Full Screen"){
+		console.log("1");
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		} else if (elem.mozRequestFullScreen) { /* Firefox */
+			elem.mozRequestFullScreen();
+		} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+			elem.webkitRequestFullscreen();
+		} else if (elem.msRequestFullscreen) { /* IE/Edge */
+			elem.msRequestFullscreen();
+		}	
+	  document.getElementById("full_screen_toggle").innerHTML="Make normal size";
+	} else {
+		console.log("2");
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.mozCancelFullScreen) { /* Firefox */
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+			document.webkitExitFullscreen();
+		} else if (document.msExitFullscreen) { /* IE/Edge */
+			document.msExitFullscreen();
+		}
+	document.getElementById("full_screen_toggle").innerHTML="Make Full Screen";
+
+	}
+
 }
 
 function socSetup() {
@@ -60,6 +78,8 @@ function socSetup() {
   };
   soc.onmessage = function(p1) {
     console.log('data received over websocket');
+    $('#title_div1').css({backgroundColor:'#116321'})
+    $('#title_div1').animate({backgroundColor:'#5a0707'}, 900);
     //console.log(p1.data)
     updatePage(p1.data);
   };

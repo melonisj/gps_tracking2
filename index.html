@@ -3,6 +3,7 @@
 <meta charset="utf-8" />
 <head>
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/jquery.color.js"></script>
 <script type="text/javascript" src="js/browserMqtt.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 
@@ -12,85 +13,100 @@
 
 </head>
 <body>
+  <div class="title_div" id="title_div1">
   <h1>Rocket Hide and Seek</h1>
+  </div>
+  <div class="div_sbs_holder">
+  <div class="left_cell_div">
   <table>
     <tr>
-      <td>
-          Rocket Location
+      <td class="table_title_cell">
+          Latitude
       </td>
-      <td id="rocket_lat_data_cell">
+      <td class="table_data_cell" id="rocket_lat_data_cell">
           40.543023 N
       </td>
-      <td id="rocket_long_data_cell">
+    </tr>
+    <td class="table_title_cell">
+          Longitude
+      </td>
+      <td class="table_data_cell" id="rocket_long_data_cell">
           105.3423 W
       </td>
     </tr>
     <tr>
-      <td>
-        Rocket Altitude
+      <td class="table_title_cell">
+        Current Altitude
       </td>
-      <td colspan="2" id="rocket_altitude_data_cell">
+      <td class="table_data_cell" id="rocket_altitude_data_cell">
         0.0 M
       </td>
     </tr>
     <tr>
-      <td>
+      <td class="table_title_cell">
         Ground Altitude
       </td>
-      <td colspan="2" id="ground_altitude_data_cell">
+      <td class="table_data_cell" id="ground_altitude_data_cell">
         0.0 M
       </td>
     </tr>
     <tr>
-      <td>
+      <td class="table_title_cell">
         Velocity
       </td>
-      <td colspan="2" id="rocket_velocity_data_cell">
+      <td class="table_data_cell" id="rocket_velocity_data_cell">
         0.0 kmh
       </td>
     </tr>
     <tr>
-      <td>
+      <td class="table_title_cell">
         Heading
       </td>
-      <td colspan="2" id="rocket_heading_data_cell">
+      <td class="table_data_cell" id="rocket_heading_data_cell">
         0.0 
       </td>
     </tr>
     <tr>
-      <td>
+      <td class="table_title_cell">
         Satellites Used
       </td>
-      <td colspan="2" id="sats_used_data_cell">
+      <td class="table_data_cell" id="sats_used_data_cell">
         0
       </td>
     </tr>
     <tr>
-      <td>
+      <td class="table_title_cell">
         GPS Quality
       </td>
-      <td colspan="2" id="gps_quality_data_cell">
+      <td class="table_data_cell" id="gps_quality_data_cell">
         Not good
       </td>
     </tr>
     <tr>
-      <td>
+      <td class="table_title_cell">
         Max Velocity
       </td>
-      <td colspan="2" id="rocket_max_velocity_data_cell">
+      <td class="table_data_cell" id="rocket_max_velocity_data_cell">
         0.0 kmh
       </td>
     </tr>
     <tr>
-      <td>
+      <td class="table_title_cell">
         Max Altitude
       </td>
-      <td colspan="2" id="rocket_max_altitude_data_cell">
+      <td class="table_data_cell" id="rocket_max_altitude_data_cell">
         0.0 M
       </td>
     </tr>
   </table>
-  <button type="button" onclick="setAltitude()">Set Ground Altitude</button>
-  <button type="button" onclick="makeFullScreen()">Make Full Screen </button>
+</div>
+<div class="right_cell_div">
+
+  <button type="button" id="set_ground_alt_button" onclick="setAltitude()">Set Ground Altitude</button>
+  <button type="button" id="full_screen_toggle" onclick="makeFullScreen()">Make Full Screen</button>
+  <button type="button" id="button_3">Button 3</button>
+  <button type="button" id="button_4">Button 4</button>
+  </div>
+</div>
 </body>
 </html>
