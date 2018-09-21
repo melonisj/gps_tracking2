@@ -13,13 +13,13 @@ function updateGPGGA() {
   document.getElementById("rocket_lat_data_cell").innerHTML = dataIn.lat.toFixed(6) + dataIn.latInd
   document.getElementById("gps_quality_data_cell").innerHTML = dataIn.gpsQuality;
   document.getElementById("rocket_long_data_cell").innerHTML = dataIn.long.toFixed(6) + dataIn.longInd;
-  document.getElementById("rocket_altitude_data_cell").innerHTML = dataIn.altitude-groundAlt + " " + dataIn.altUnit;
+  document.getElementById("rocket_altitude_data_cell").innerHTML = (dataIn.altitude-groundAlt).toFixed(2) + " " + dataIn.altUnit;
   if(dataIn.altitude-groundAlt > maxAltitude){
   	maxAltitude = dataIn.altitude-groundAlt;
-  	  document.getElementById("rocket_max_altitude_data_cell").innerHTML = dataIn.altitude-groundAlt + " " + dataIn.altUnit;
+  	  document.getElementById("rocket_max_altitude_data_cell").innerHTML = (dataIn.altitude-groundAlt).toFixed(2) + " " + dataIn.altUnit;
   }
   if(setGroundFlag){
-	document.getElementById("ground_altitude_data_cell").innerHTML = dataIn.altitude  + " " + dataIn.altUnit;
+	document.getElementById("ground_altitude_data_cell").innerHTML = (dataIn.altitude).toFixed(2)  + " " + dataIn.altUnit;
 	groundAlt = dataIn.altitude;
 	setGroundFlag = false;
   }
