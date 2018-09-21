@@ -3,6 +3,7 @@ var groundAlt = 0;
 var maxAltitude = 0;
 var maxVelocity = 0;
 var elem = document.documentElement;
+var setGroundFlag = false;
 
 
 
@@ -16,6 +17,11 @@ function updateGPGGA() {
   if(dataIn.altitude-groundAlt > maxAltitude){
   	maxAltitude = dataIn.altitude-groundAlt;
   	  document.getElementById("rocket_max_altitude_data_cell").innerHTML = dataIn.altitude-groundAlt + " " + dataIn.altUnit;
+  }
+  if(setGroundFlag){
+	document.getElementById("ground_altitude_data_cell").innerHTML = dataIn.altitude  + " " + dataIn.altUnit;
+	groundAlt = dataIn.altitude;
+	setGroundFlag = false;
   }
 }
 
@@ -36,8 +42,7 @@ function updateGPVTG() {
 }
 
 function setAltitude() {
-	document.getElementById("ground_altitude_data_cell").innerHTML = dataIn.altitude  + " " + dataIn.altUnit;
-	groundAlt = dataIn.altitude;
+	setGroundFlag = true;
 
 }
 
@@ -101,7 +106,7 @@ function updatePage(json) {
   }
   if (json) {
     dataIn = JSON.parse(json);
-    console.log(dataIn);
+    //console.log(dataIn);
     switch (dataIn.dataType) {
       case ("$GPGGA"):
         updateGPGGA();
