@@ -2,6 +2,8 @@ var dataIn;
 var groundAlt = 0;
 var maxAltitude = 0;
 var maxVelocity = 0;
+var elem = document.documentElement;
+
 
 
 function updateGPGGA() {
@@ -35,6 +37,18 @@ function setAltitude() {
 	document.getElementById("ground_altitude_data_cell").innerHTML = dataIn.altitude  + " " + dataIn.altUnit;
 	groundAlt = dataIn.altitude;
 
+}
+
+function makeFullScreen(){
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
 }
 
 function socSetup() {
